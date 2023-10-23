@@ -304,7 +304,7 @@ public class InviteRequestProcessor extends SIPRequestProcessorParent implements
                     return;
                 }
                 String username = sdp.getOrigin().getUsername();
-                String addressStr = sdp.getConnection().getAddress();
+                String addressStr = sdp.getConnection() == null ?  sdp.getOrigin().getAddress() : getConnection().getAddress();
 
 
                 Device device = null;
